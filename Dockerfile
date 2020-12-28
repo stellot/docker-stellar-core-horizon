@@ -1,9 +1,10 @@
 FROM ubuntu:16.04
 
-MAINTAINER Bartek Nowotarski <bartek@stellar.org>
+MAINTAINER Stanislaw Baranski <stan@stan.bar>
 
 ENV STELLAR_CORE_VERSION 15.1.0-41
 ENV HORIZON_VERSION 1.13.0-93
+ENV CONFD_VERSION 0.15.0
 
 EXPOSE 5432
 EXPOSE 8000
@@ -29,6 +30,7 @@ ADD common /opt/stellar-default/common
 ADD pubnet /opt/stellar-default/pubnet
 ADD testnet /opt/stellar-default/testnet
 ADD standalone /opt/stellar-default/standalone
+ADD confd /etc/confd
 
 
 ADD start /
